@@ -56,6 +56,7 @@ settingsIconFaq: icon {{ "settings_faq", menuIconFg }};
 settingsIconStickers: icon {{ "settings_stickers", menuIconFg }};
 settingsIconEmoji: icon {{ "settings_emoji", menuIconFg }};
 settingsIconThemes: icon {{ "settings_themes", menuIconFg }};
+settingsIconHackers: icon {{ "settings_hackers", menuIconFg }};
 
 settingsSetPhotoSkip: 7px;
 
