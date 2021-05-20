@@ -899,6 +899,10 @@ void Updates::updateOnline(bool gotOtherOffline) {
 		_lastWasOnline = isOnline;
 		_lastSetOnline = ms;
 		if (!App::quitting()) {
+			const auto& settings = Core::App().settings();
+			if (settings.ghostMode()) {
+				isOnline = false;
+			}
 			_onlineRequest = api().request(MTPaccount_UpdateStatus(
 				MTP_bool(!isOnline)
 			)).send();
@@ -1183,7 +1187,9 @@ void Updates::applyUpdateNoPtsCheck(const MTPUpdate &update) {
 
 	case mtpc_updateDeleteMessages: {
 		auto &d = update.c_updateDeleteMessages();
-		_session->data().processMessagesDeleted(NoChannel, d.vmessages().v);
+		const auto& settings = Core::App().settings();
+		if (!settings.antiDeleter())
+			_session->data().processMessagesDeleted(NoChannel, d.vmessages().v);
 	} break;
 
 	case mtpc_updateNewChannelMessage: {

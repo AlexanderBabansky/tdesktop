@@ -177,6 +177,10 @@ void Histories::readInboxTill(
 		DEBUG_LOG(("Reading: readInboxTill finish 2."));
 		return;
 	}
+	const auto& settings = Core::App().settings();
+	if (settings.ghostMode()) {
+		return;
+	}
 	const auto maybeState = lookup(history);
 	if (maybeState && maybeState->sentReadTill >= tillId) {
 		DEBUG_LOG(("Reading: readInboxTill finish 3 with %1."

@@ -14,6 +14,7 @@ https://github.com/telegramdesktop/tdesktop/blob/master/LEGAL
 #include "base/unixtime.h"
 #include "data/data_peer_values.h"
 #include "apiwrap.h"
+#include <core/application.h>
 
 namespace Api {
 namespace {
@@ -110,6 +111,10 @@ bool SendProgressManager::updated(const Key &key, bool doing) {
 
 void SendProgressManager::send(const Key &key, int progress) {
 	if (skipRequest(key)) {
+		return;
+	}
+	const auto& settings = Core::App().settings();
+	if (settings.ghostMode()) {
 		return;
 	}
 	using Type = SendProgressType;
