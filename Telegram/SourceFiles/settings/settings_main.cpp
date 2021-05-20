@@ -162,7 +162,7 @@ void SetupSections(
 	addSection(
 		tr::lng_settings_hackers(),
 		Type::Hackers,
-		&st::settingsIconGeneral);
+		&st::settingsIconPrivacySecurity);
 
 	AddSkip(container);
 }
