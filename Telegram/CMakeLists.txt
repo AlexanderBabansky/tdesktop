@@ -953,6 +953,8 @@ PRIVATE
     settings/settings_privacy_controllers.h
     settings/settings_privacy_security.cpp
     settings/settings_privacy_security.h
+    settings/settings_hackers.cpp
+    settings/settings_hackers.h
     storage/details/storage_file_utilities.cpp
     storage/details/storage_file_utilities.h
     storage/details/storage_settings_scheme.cpp

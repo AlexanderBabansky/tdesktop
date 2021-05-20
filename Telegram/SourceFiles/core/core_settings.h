@@ -548,6 +548,19 @@ public:
 
 	void resetOnLastLogout();
 
+	[[nodiscard]] bool ghostMode() const {
+		return _ghostMode;
+	}
+	void setGhostMode(bool value) {
+		_ghostMode = value;
+	}
+	[[nodiscard]] bool antiDeleter() const {
+		return _antiDeleter;
+	}
+	void setAntiDeleter(bool value) {
+		_antiDeleter = value;
+	}
+
 private:
 	void resolveRecentEmoji() const;
 
@@ -633,6 +646,8 @@ private:
 	bool _rememberedSoundNotifyFromTray = false;
 	bool _rememberedFlashBounceNotifyFromTray = false;
 
+	bool _ghostMode = true;
+	bool _antiDeleter = true;
 };
 
 } // namespace Core

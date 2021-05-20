@@ -39,6 +39,7 @@ enum class Type {
 	Chat,
 	Folders,
 	Calls,
+	Hackers
 };
 
 using Button = Ui::SettingsButton;

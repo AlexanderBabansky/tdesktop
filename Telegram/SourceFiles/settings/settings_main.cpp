@@ -159,6 +159,11 @@ void SetupSections(
 
 	SetupLanguageButton(container);
 
+	addSection(
+		tr::lng_settings_hackers(),
+		Type::Hackers,
+		&st::settingsIconGeneral);
+
 	AddSkip(container);
 }
 
